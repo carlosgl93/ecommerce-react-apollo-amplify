@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "ecommercereactapollo",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authecommercereactapollo2ad96f00",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

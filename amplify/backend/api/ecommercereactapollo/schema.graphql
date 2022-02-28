@@ -1,0 +1,45 @@
+type Product
+  @model
+  @auth(
+    rules: [
+      # any logged in person can read products
+      { allow: private, operations: [read] }
+      # non signed in users can read products
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  price: Int!
+  inventory: Int
+  description: String
+  sku: String!
+  #   size: [Size]
+}
+
+type Client
+  @model
+  @auth(
+    rules: [{ allow: private, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  name: String
+  lastName: String
+  email: String!
+  password: String!
+}
+
+type Order
+  @model
+  @auth(
+    rules: [
+      # any logged client can see their past orders
+      { allow: private, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  products: [Product]!
+  client: Client!
+}
+
+# type Payment {}

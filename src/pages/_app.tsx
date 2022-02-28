@@ -4,12 +4,15 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "../theme";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import AppBar from "../components/AppBar";
+import Footer from "../components/Footer";
+import { Box } from "@mui/material";
 
 export default function MyApp(props) {
   const { Component } = props;
 
   const client = new ApolloClient({
-    uri: "To be added soon after setting up aws amplify",
+    uri: "https://5nijwllo6ffn7jxcpxi6i4r4vy.appsync-api.sa-east-1.amazonaws.com/graphqlGraphQL",
     cache: new InMemoryCache(),
   });
 
@@ -21,7 +24,16 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component />
+        <AppBar />
+        <Box
+          sx={{
+            minHeight: "100vh",
+            textAlign: "center",
+          }}
+        >
+          <Component />
+        </Box>
+        <Footer />
       </ThemeProvider>
     </ApolloProvider>
   );

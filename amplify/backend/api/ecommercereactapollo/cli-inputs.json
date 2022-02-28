@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "ecommercereactapollo",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\cgumu\\dev\\ecommerce-react-apollo-amplify\\amplify\\backend\\api\\ecommercereactapollo\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authecommercereactapollo2ad96f00"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-02-26T22:49:17.649Z",
+        "keyDescription": "ecommerceApiKey"
+      }
+    ]
+  }
+}
